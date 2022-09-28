@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        /* .container::after {
+            content: "";
+            width: 500px;
+            height: 500px;
+            background: url(./img/homework_bear.png) no-repeat center/cover;
+            filter: opacity(0.5);
+            position: absolute;
+            top: 200px;
+        } */
+
+        .bear_body {
+            margin: auto;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: black;
+            position: relative;
+        }
+
+        .bear_body::after {
+            content: "";
+            width: 130px;
+            height: 130px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            transform: translate(0, -50%);
+        }
+
+        .bear_body::before {
+            content: "";
+            width: 130px;
+            height: 130px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            right: -5%;
+            transform: translate(0, -50%);
+        }
+
+        .bear_ear {
+            width: 400px;
+            height: 80px;
+            /* background: rgba(151, 114, 114, 0.295); */
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bear_ear :first-child {
+            width: 80px;
+            height: 80px;
+            background: black;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .bear_ear :first-child::after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: rgb(255, 255, 255);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bear_ear :last-child {
+            width: 80px;
+            height: 80px;
+            background: black;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .bear_ear :last-child::after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: rgb(255, 255, 255);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bear_eyes {
+            width: 300px;
+            height: 120px;
+            /* background: rgba(151, 114, 114, 0.295); */
+            position: absolute;
+            left: 50%;
+            top: 19%;
+            transform: translate(-50%, 0%);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bear_eyes :first-child {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .bear_eyes :first-child::after {
+            content: "";
+            width: 70px;
+            height: 70px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bear_eyes :last-child {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .bear_eyes :last-child::after {
+            content: "";
+            width: 70px;
+            height: 70px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bear_nose {
+            width: 320px;
+            height: 150px;
+            /* background: rgba(151, 114, 114, 0.295); */
+            position: absolute;
+            left: 50%;
+            top: 38%;
+            transform: translate(-50%, 0%);
+            display: flex;
+            justify-content: center;
+        }
+
+        .bear_nose div {
+            width: 210px;
+            height: 150px;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .bear_nose div::before {
+            content: "";
+            width: 50px;
+            height: 35px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .bear_nose div::after {
+            content: "";
+            width: 130px;
+            height: 50px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 65px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .bear_pattern {
+            width: 170px;
+            height: 70px;
+            /* background: rgba(151, 114, 114, 0.295); */
+            position: absolute;
+            left: 50%;
+            bottom: 9%;
+            transform: translate(-50%, 0%);
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .bear_pattern :first-child {
+
+            width: 70px;
+            height: 70px;
+            background: white;
+            transform: skewX(50deg);
+        }
+
+        .bear_pattern :last-child {
+            width: 70px;
+            height: 70px;
+            background: white;
+            transform: skewX(-50deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bear_body">
+            <div class="bear_ear">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="bear_eyes">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="bear_nose">
+                <div></div>
+            </div>
+            <div class="bear_pattern">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
